@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import prisma from "../db/prisma.js";
 import bcryptjs from "bcryptjs";
+import generateToken from "../utils/generateToken.js";
 
 export const signup = async (req: Request, res: Response) => {
   try {
@@ -37,7 +38,7 @@ export const signup = async (req: Request, res: Response) => {
     });
 
     if (newUser) {
-      // generate token in a sec
+      generateToken(newUser.id, res);
 
       res.status(201).json({
         id: newUser.id,
