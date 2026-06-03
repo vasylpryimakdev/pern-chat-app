@@ -1,4 +1,4 @@
-# pern-chat-app
+# Pern Chat App
 
 An extensible, real-time chat application built with the PERN stack (Postgres, Express, React, Node) and Socket.IO.
 
